@@ -12,3 +12,4 @@
 * [正则表达式](/javascript/regExp.md)
 * [es6](/javascript/es6.md)
 * [其他术语](/javascript/others.md)
+* [设计模式](/javascript/pattern.md)
