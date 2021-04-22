@@ -10,6 +10,11 @@
 - {n} : 出现n次；
 - {n,m}: 出现n到m次；
 - {n,}: 出现n次到多次
+- \[xyz\]: 字符集合 
+  - 匹配方括号中的任意字符，包括转义序列。你可以使用破折号（-）来指定一个字符范围。
+  - “*”和“.”一个字符集中没有特殊的意义，可不用转义，转义也是起作用
+  - [abcd]与[a-d]的结果是一样
+  - [a-z]与[\w]的结果是一样
 - \\b: 单词的边界
 - \\B: 非单词的边界
 - \\d: 数字, 等价于[0-9]
@@ -72,3 +77,27 @@
 'TomSprat' => x
 'MarkSprat' => 'Sprat'
 ```
+
+## RegExp方法
+- exec 在该字符串中执行匹配项的搜索。
+- test 判断该正则在字符串里是否有匹配, 返回bool
+- [Symbol.match] 对给定字符串执行匹配并返回匹配结果。
+- [Symbol.matchAll] 对给定字符串执行匹配，返回所有匹配结果。
+- [Symbol.replace] 给定新的子串，替换所有匹配结果。
+- [Symbol.search] 在给定字符串中搜索匹配项，并返回在字符串中找到字符索引。
+- [Symbol.split] 通过将给定字符串拆分为子字符串，并返回字符串形成的数组。
+
+## exec方法
+返回值
+如果匹配成功, exec() 方法返回一个数组
+```js
+var re = /quick\s(brown).+?(jumps)/ig;
+var result = re.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
+```
+|  对象  |   属性/索引    |                   描述                    |                    例子                     |
+| :----: | :------------: | :---------------------------------------: | :-----------------------------------------: |
+| result |     \[0\]      |             匹配的全部字符串              |            Quick Brown Fox Jumps            |
+|        | \[1\], ...[n ] |             括号中的分组捕获              |          [1] = Brown   [2] = Jumps          |
+|        |     index      | 匹配到的字符位于原始字符串的基于0的索引值 |                      4                      |
+|        |     input      |                原始字符串                 | The Quick Brown Fox Jumps Over The Lazy Dog |
+如果 exec 未使用g标志，则与String.match() 相同的结果
