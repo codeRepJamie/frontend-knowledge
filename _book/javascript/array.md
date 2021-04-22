@@ -47,3 +47,16 @@ animals.slice(-2,-1) // => ['duck']
 // end 大于数组的长度, 截取到最后
 animals.slice(-2,5) //  => ['duck', 'elephant']
 ```
+
+## sort
+- 此函数会直接修改数组，返回排序好的原数组，不进行复制
+```js
+// 默认升序排列
+[5,1,2,3,4].sort() // => [1,2,3,4,5]
+
+// compareFunction 判断函数
+arr.sort(compareFunction)
+// compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前
+// 如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。
+// 如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。
+```
