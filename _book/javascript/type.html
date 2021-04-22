@@ -511,7 +511,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../dom-bom/ajax.html">
+        <li class="chapter " data-level="1.5.2" data-path="../dom-bom/dom-evnet.md">
+            
+                <span>
+            
+                    
+                    DOM事件模型(1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../dom-bom/ajax.html">
             
                 <a href="../dom-bom/ajax.html">
             
@@ -524,7 +537,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../dom-bom/dom.html">
+        <li class="chapter " data-level="1.5.4" data-path="../dom-bom/dom.html">
             
                 <a href="../dom-bom/dom.html">
             
@@ -537,7 +550,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../dom-bom/render.html">
+        <li class="chapter " data-level="1.5.5" data-path="../dom-bom/render.html">
             
                 <a href="../dom-bom/render.html">
             
@@ -550,7 +563,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../dom-bom/window.html">
+        <li class="chapter " data-level="1.5.6" data-path="../dom-bom/window.html">
             
                 <a href="../dom-bom/window.html">
             
@@ -1337,6 +1350,11 @@ value === <span class="hljs-literal">null</span> &#x6216; value == <span class="
 <pre><code class="lang-js"><span class="hljs-comment">// &#x5229;&#x7528;constructor&#x5224;&#x65AD;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x662F;&#x5426;&#x4E3A;&#x5BF9;&#x8C61;&#x6784;&#x9020;&#x51FD;&#x6570;&#x672C;&#x8EAB;(&#x524D;&#x63D0;&#x7C7B;&#x6709;&#x5B9A;&#x4E49;&#x6784;&#x9020;&#x51FD;&#x6570;)</span>
 value.constructor === <span class="hljs-built_in">Object</span>
 </code></pre>
+<h3 id="&#x7C7B;&#x578B;&#xFF1A;&#x6570;&#x7EC4;">&#x7C7B;&#x578B;&#xFF1A;&#x6570;&#x7EC4;</h3>
+<pre><code class="lang-js"><span class="hljs-built_in">Array</span>.isArray(value)
+<span class="hljs-comment">// &#x6216;</span>
+<span class="hljs-built_in">Object</span>.prototype.toString.call(value) === <span class="hljs-string">&apos;[object Array]&apos;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1380,7 +1398,7 @@ value.constructor === <span class="hljs-built_in">Object</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据类型数据转换(1)","level":"1.4.1","depth":2,"next":{"title":"字面量(1)","level":"1.4.2","depth":2,"path":"javascript/literals.md","ref":"javascript/literals.md","articles":[]},"previous":{"title":"javascript","level":"1.4","depth":1,"path":"javascript/index.md","ref":"javascript/index.md","articles":[{"title":"数据类型数据转换(1)","level":"1.4.1","depth":2,"path":"javascript/type.md","ref":"javascript/type.md","articles":[]},{"title":"字面量(1)","level":"1.4.2","depth":2,"path":"javascript/literals.md","ref":"javascript/literals.md","articles":[]},{"title":"词法作用域(1)","level":"1.4.3","depth":2,"path":"javascript/scrope.md","ref":"javascript/scrope.md","articles":[]},{"title":"闭包(1)","level":"1.4.4","depth":2,"path":"javascript/closure.md","ref":"javascript/closure.md","articles":[]},{"title":"执行上下文(1)","level":"1.4.5","depth":2,"path":"javascript/context.md","ref":"javascript/context.md","articles":[]},{"title":"原型与原型链(1)","level":"1.4.6","depth":2,"path":"javascript/prototype.md","ref":"javascript/prototype.md","articles":[]},{"title":"es6(1)","level":"1.4.7","depth":2,"path":"javascript/es6.md","ref":"javascript/es6.md","articles":[]},{"title":"单线程与异步队列(1*)","level":"1.4.8","depth":2,"path":"javascript/async.md","ref":"javascript/async.md","articles":[]},{"title":"正则表达式(1*)","level":"1.4.9","depth":2,"path":"javascript/regExp.md","ref":"javascript/regExp.md","articles":[]},{"title":"对象操作(2)","level":"1.4.10","depth":2,"path":"javascript/object.md","ref":"javascript/object.md","articles":[]},{"title":"模块化(2)","level":"1.4.11","depth":2,"path":"javascript/module.md","ref":"javascript/module.md","articles":[]},{"title":"其他术语(3)","level":"1.4.12","depth":2,"path":"javascript/others.md","ref":"javascript/others.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript/type.md","mtime":"2021-04-21T07:11:52.085Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-21T01:00:26.171Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据类型数据转换(1)","level":"1.4.1","depth":2,"next":{"title":"字面量(1)","level":"1.4.2","depth":2,"path":"javascript/literals.md","ref":"javascript/literals.md","articles":[]},"previous":{"title":"javascript","level":"1.4","depth":1,"path":"javascript/index.md","ref":"javascript/index.md","articles":[{"title":"数据类型数据转换(1)","level":"1.4.1","depth":2,"path":"javascript/type.md","ref":"javascript/type.md","articles":[]},{"title":"字面量(1)","level":"1.4.2","depth":2,"path":"javascript/literals.md","ref":"javascript/literals.md","articles":[]},{"title":"词法作用域(1)","level":"1.4.3","depth":2,"path":"javascript/scrope.md","ref":"javascript/scrope.md","articles":[]},{"title":"闭包(1)","level":"1.4.4","depth":2,"path":"javascript/closure.md","ref":"javascript/closure.md","articles":[]},{"title":"执行上下文(1)","level":"1.4.5","depth":2,"path":"javascript/context.md","ref":"javascript/context.md","articles":[]},{"title":"原型与原型链(1)","level":"1.4.6","depth":2,"path":"javascript/prototype.md","ref":"javascript/prototype.md","articles":[]},{"title":"es6(1)","level":"1.4.7","depth":2,"path":"javascript/es6.md","ref":"javascript/es6.md","articles":[]},{"title":"单线程与异步队列(1*)","level":"1.4.8","depth":2,"path":"javascript/async.md","ref":"javascript/async.md","articles":[]},{"title":"正则表达式(1*)","level":"1.4.9","depth":2,"path":"javascript/regExp.md","ref":"javascript/regExp.md","articles":[]},{"title":"对象操作(2)","level":"1.4.10","depth":2,"path":"javascript/object.md","ref":"javascript/object.md","articles":[]},{"title":"模块化(2)","level":"1.4.11","depth":2,"path":"javascript/module.md","ref":"javascript/module.md","articles":[]},{"title":"其他术语(3)","level":"1.4.12","depth":2,"path":"javascript/others.md","ref":"javascript/others.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript/type.md","mtime":"2021-04-22T00:22:30.726Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-21T01:00:26.171Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

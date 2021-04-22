@@ -30,6 +30,7 @@
   * [其他术语(3)](/javascript/others.md)
 * [DOM&BOM](dom-bom/index.md)
   * [本地储存(1)](/dom-bom/storage.md)
+  * [DOM事件模型(1)](/dom-bom/dom-evnet.md)
   * [异步通信Ajax技术(1*)](/dom-bom/ajax.md)
   * [JavaScript(DOM)(1*)](/dom-bom/dom.md)
   * [浏览器渲染机制(1*)](/dom-bom/render.md)

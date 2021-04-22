@@ -60,3 +60,10 @@ typeof value === 'function'
 // 利用constructor判断该对象的构造函数是否为对象构造函数本身(前提类有定义构造函数)
 value.constructor === Object
 ```
+
+### 类型：数组
+```js
+Array.isArray(value)
+// 或
+Object.prototype.toString.call(value) === '[object Array]'
+```
