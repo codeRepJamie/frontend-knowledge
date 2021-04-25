@@ -10,6 +10,9 @@
 - let/const是使用区块作用域；var是使用函数作用域
 - 在let/const声明之前就访问对应的变量与常量，会抛出ReferenceError错误；但在var声明之前就访问对应的变量，则会得到undefined
 
+## 函数是“一等公民”
+在JavaScript中，函数不仅拥有一切传统函数的使用方式（声明和调用），而且可以做到像简单值一样赋值（var func = function(){}）、传参(function func(x,callback){callback();})、返回(function(){return function(){}})，这样的函数也称之为第一级函数（First-class Function）。不仅如此，JavaScript中的函数还充当了类的构造函数的作用，同时又是一个Function类的实例(instance)。这样的多重身份让JavaScript的函数变得非常重要。
+
 ## [标准内置对象分类](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects)
 指的是JavaScript标准内建对象包括一些属性、方法及基本对象。即不依赖宿主环境的对象。此对象也不能直接在js调用，仅可以在宿主环境下的全局作用域中调用。标准内置对象不应与global对象混淆。
 ## global对象

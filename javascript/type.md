@@ -14,18 +14,41 @@
 - Object 对象
 
 ## typeof运算符结果
- - 'string'
- - 'number'
- - 'boolean'
- - 'undefined'
- - 'object' //引用类型
- - 'function'  //引用类型(特殊)
- - 'symbol'
- - 注意 typeof 运算符对于 null 值会返回 "Object"
+```js
+ console.log(typeof '123') // => 'string'
+ console.log(typeof 123) // => 'number'
+ console.log(typeof true) // => 'boolean'
+ console.log(typeof undefined) // => 'undefined'
+ console.log(typeof {}) // => 'object' 引用类型
+ console.log(typeof function(){}) // => 'function' 引用类型(特殊)
+ console.log(typeof Symbol('')) // => 'symbol'
 
+ //奇怪结果
+ // null 值会返回 "Object"
+ console.log(typeof null) // 'object'
+```
+## ==运算结果
+- undefined和null与任何有意义的值比较返回的都是false, 相反他们之间包括自身比较结果都为true
+- NaN与所有值都不相等，包括自身
+- 所有相同类型的数据比较，都不会发生隐式转换
+- String与Boolean的值参与比较，String与Boolean的值都会隐式转换成数字，再比较 如: '1' == 1 和 '1' == true
+- object值参与比较时（非对象与对象比较），该尝试调用.toString() 和 .valueOf() 方法，将参数 A 转换为原始值（Primitive），再比较
+- 对象与对象比较时，结果与===的结果一样，内存地址不一样的对象不相等
+- +0 == -0 结果为true
+
+## ===运算结果
+ - undefined和null与任何有意义的值比较返回的都是false, 相反他们之间包括自身比较结果都为true
+ - 只要是类型不相同，都判断为不相等
+ - NaN与所有值都不相等，包括自身
+ - +0 == -0 结果为true
+
+## Object.is(value)结果
+ - 只要是类型不相同，都判断为不相等
+ - NaN与所有值都不相等，但 Object.is(NaN,NaN) 为true
+ - +0 == -0 结果为false
 ## 强制类型转换情况
  - 字符串运算 100 + '1'
- - ==运算符 100 == '100'
+ - ==运算符(非null/undefined) ==号两边都会发生隐式转换  例如 100 == '100', [] == true
  - if运算符 if(a){}
  - 逻辑运算符 10 && 0
  - 取反 !1
@@ -46,7 +69,9 @@ typeof value === 'symbol' //=> "symbol"
 // 由于
 console.log(typeof null); //=> "object"
 // 所以只能用
-value === null 或 value == null
+value === null 
+//或 
+value == null
 ```
 
 ### 特殊类型：Function

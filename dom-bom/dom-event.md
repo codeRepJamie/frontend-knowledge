@@ -3,8 +3,8 @@
 ## 不支持事件冒泡事件
 - mouseenter
 - mouseleave
-- blur
 - focus
+- blur
 - load
 - unload
 - reset

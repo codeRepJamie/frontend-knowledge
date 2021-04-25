@@ -82,6 +82,8 @@
   * [树(2)](/algorithm/tree.md)
   * [常用数据结构(2*)](/algorithm/structure.md)
   * [动态规划(3*)](/algorithm/dynamic.md)
+* [小程序](/miniprogram/index.md)
+  * [微信小程序(1)](/miniprogram/wechat.md)
 * [多人开发流程](flow/index.md)
 * [架构&项目综合](project/index.md)
 * [兼容性](/compatibility/index.md)
