@@ -2,7 +2,6 @@
 
   * [综合问题(1)](/css/normal.md)
   * [选择器(1)](/css/selector.md)
-  * [定位(1)](/css/position.md)
   * [盒子模型(1)](/css/box-model.md)
   * [css绘图技巧(1*)](/css/practice.md)
   * [布局(2)](/css/layout.md)
