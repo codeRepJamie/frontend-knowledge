@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="http://hcw3-tst.oss-cn-shenzhen.aliyuncs.com/hd/93982ed992734f09846eb7e480494c4c.jpg" />
+  <div id="abc"></div>
+</body>
+<script>
+  function fib(n) {
+    if (n == 0) return 0
+    else if (n == 1) return 1
+    else return fib(n - 1) + fib(n - 2)
+  }
+
+  function jjj() {
+    console.log(fib(30))
+    //document.getElementById('abc').innerHTML = fib(30)
+  }
+  setTimeout(jjj, 0)
+
+  new Promise((resolve, reject) => {
+    setTimeout(resolve, 0);
+  }).then(function MicroMing() {
+    console.log(fib(30))
+    console.log(2)
+  })
+</script>
+
+</html>

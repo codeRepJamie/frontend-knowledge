@@ -24,7 +24,7 @@
  console.log(typeof Symbol('')) // => 'symbol'
 
  //奇怪结果
- // null 值会返回 "Object"
+ // null 值会返回 "Object", null代表空对象指针，所以typeof判断成一个对象。可以说JS设计上的一个BUG
  console.log(typeof null) // 'object'
 ```
 ## ==运算结果
