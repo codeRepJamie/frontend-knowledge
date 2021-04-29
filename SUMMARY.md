@@ -29,6 +29,20 @@
   * [对象操作(2)](/javascript/object.md)
   * [模块化(2)](/javascript/module.md)
   * [设计模式(2)](/javascript/pattern.md)
+    * 生产模式
+      * [工厂模式](/javascript/js-design-patterns/factory-pattern.md)
+      * [单例模式](/javascript/js-design-patterns/singleton-pattern.md)
+    * 结构模式
+        * [构造器模式](/javascript/js-design-patterns/constructor-pattern.md)
+        * [模块模式](/javascript/js-design-patterns/module-pattern.md)
+        * [外观模式](/javascript/js-design-patterns/facade-pattern.md)
+        * [装饰者模式](/javascript/js-design-patterns/decorator-pattern.md)
+        * [混合模式](/javascript/js-design-patterns/mixin-pattern.md)
+        * [享元模式](/javascript/js-design-patterns/fly-weight-pattern.md)
+    * 行为模式
+        * [观察者模式](/javascript/js-design-patterns/observer-pattern.md)
+        * [中介者模式](/javascript/js-design-patterns/mediator-pattern.md)
+        * [命令模式](/javascript/js-design-patterns/command-pattern.md)
   * [术语表(3)](/javascript/others.md)
 * [DOM&BOM](dom-bom/index.md)
   * [本地储存(1)](/dom-bom/storage.md)

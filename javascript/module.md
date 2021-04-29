@@ -265,3 +265,9 @@ export function doStuff() {}
     import { foo } from 'module2';
   }
   ```
+
+### as关键字
+- 将输入的变量重命名
+  ```js
+  import { originMoudle as newMoudleName } from './module.js'
+  ```

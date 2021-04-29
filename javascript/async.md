@@ -100,6 +100,40 @@ console.log('sync')
 - 如果微任务与宏任务同时触发回调，微任务会优先执行
 - Promise, MutationObserver 等绝大多数的由js发起的属于微任务
 
+### queueMicrotask方法调用微任务
+为了允许第三方库、框架、polyfills 能使用微任务，Window 暴露了 queueMicrotask() 方法，而 Worker 接口则通过WindowOrWorkerGlobalScope mixin 提供了同名的 queueMicrotask() 方法。
+
+### 使用微任务场景
+使用微任务的最主要原因简单归纳为：确保任务顺序的一致性，即便当结果或数据是同步可用的，也要同时减少操作中用户可感知到的延迟而带来的风险。
+#### 场景一
+(例如保证条件性使用 promises 时的顺序例子)[https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide]
+相当于使用 Promise.resolve(data)作用，增加一个微任务，平衡了两个子句。
+
+#### 场景二
+合并批量操作
+下面的代码片段创建了一个函数，将多个消息放入一个数组中批处理，通过一个微任务在上下文退出时将这些消息作为单一的对象发送出去。适合埋点等高频触发需要合并一次网络请求场景。
+```js
+const messageQueue = [];
+
+let sendMessage = message => {
+  messageQueue.push(message);
+
+  if (messageQueue.length === 1) {
+    queueMicrotask(() => {
+      const json = JSON.stringify(messageQueue);
+      messageQueue.length = 0;
+      setTimeout(()=>{console.log(json),0})
+    });
+  }
+};
+
+sendMessage('1');
+sendMessage('2');
+sendMessage('3');
+
+// => ["1","2","3"]
+```
+
 ### 更详细时间循环步骤
 1. 从 宏任务 队列中出队（dequeue）并执行最早的任务。
 2. 执行所有 微任务：
