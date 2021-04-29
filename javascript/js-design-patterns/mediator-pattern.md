@@ -6,10 +6,12 @@
  
  中介者模式定义：使用单一对象处理其他涉及不同对象的流程，仅靠单一对象集中处理，使得流程更容易理解和维护。
 
-##知识点二：一个中介者模式例子
+## 知识点二：一个中介者模式例子
 
 1.  没有使用中介模式实现
-```javascript
+
+
+```js
 // 先定义玩家构造函数
 function Player(name, teamColor){
     this.partners = []; // 队友列表
@@ -17,7 +19,6 @@ function Player(name, teamColor){
     this.state = 'live'; // 玩家状态
     this.name = name; // 角色名字
     this.teamColor = null; // 队伍颜色
-    
 };
 
 // 玩家团队胜利
@@ -96,7 +97,8 @@ var player8 = playerFactory('h', 'blue');
 ```
 
 1.  使用中介者模式改造
-```javascript
+
+```js
 // 先定义玩家构造函数
 
 function Player(name, teamColor){

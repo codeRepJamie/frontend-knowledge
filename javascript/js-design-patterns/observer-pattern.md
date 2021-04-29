@@ -25,7 +25,76 @@
 1.  实现Observe的更新接口，实现自身状态和目标状态保持一致
 
 ##知识点二：具体实行代码
-[source code](https://jsfiddle.net/jamiexTsang/s2dh19mu/#height=500&type=frame&tabs=js,html,result&theme=dark)
+```html
+<body>
+  <button id="addBtn">增加CheckBox</button>
+  <input type="checkbox" id="handle"></input>
+  <div id="checkboxWrapper"></div>
+</body>
+```
+```js
+// 事件池
+class ObserverList {
+  constructor() {
+    this.list = []
+  }
+  count() {
+    return this.list.length
+  }
+  add(obj) {
+    this.list.push(obj)
+  }
+  get(index) {
+    return this.list[index]
+  }
+}
+//抽象目标
+class Subject {
+  constructor() {
+    this.observers = new ObserverList()
+  }
+  addObserver(observer) {
+    this.observers.add(observer);
+  }
+  notify(context) {
+    var observerCount = this.observers.count();
+    for (var i = 0; i < observerCount; i++) {
+      this.observers.get(i).update(context);
+    }
+  }
+}
+//抽象观察者
+class Observer {
+  constructor(fn) {
+    this.update = fn
+  }
+}
+
+const addBtn = document.getElementById('addBtn')
+let handle = document.getElementById('handle')
+const checkboxWrapper = document.getElementById('checkboxWrapper')
+
+addBtn.onclick = addNewObserver
+handle.onclick = changeHandle
+//具体目标绑定
+handle.subject = new Subject()
+
+// 具体观察者绑定
+function addNewObserver() {
+  let check = document.createElement('input')
+  check.type = 'checkbox'
+  check.observer = new Observer((value) => {
+    // 广播事件后的回调函数
+    check.checked = value
+  })
+  handle.subject.addObserver(check.observer)
+  checkboxWrapper.appendChild(check)
+}
+function changeHandle() {
+  // 目标广播事件
+  handle.subject.notify(handle.checked);
+}
+```
 
 ####分析代码
 ***Subject*** （目标）

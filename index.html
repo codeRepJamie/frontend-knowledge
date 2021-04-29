@@ -6,23 +6,71 @@
 </head>
 
 <body>
-  <div id="progress"></div>
+  <button id="addBtn">增加CheckBox</button>
+  <input type="checkbox" id="handle"></input>
+  <div id="checkboxWrapper"></div>
 </body>
 <script>
-  let i = 0;
-  const progress = document.getElementById('progress')
-  function count() {
-    // 做繁重的任务的一部分 (*)
-    do {
-      i++;
-      progress.innerHTML = i;
-    } while (i % 1e3 != 0);
 
-    if (i < 1e6) {
-      queueMicrotask(count);
+  class Subject {
+    constructor() {
+      this.observers = new ObserverList()
+    }
+    addObserver(observer) {
+      this.observers.add(observer);
+    }
+    notify(context) {
+      var observerCount = this.observers.count();
+      for (var i = 0; i < observerCount; i++) {
+        this.observers.get(i).update(context);
+      }
     }
   }
-  count();
+
+  class Observer {
+    constructor(fn) {
+      this.update = fn
+    }
+  }
+
+  class ObserverList {
+    constructor() {
+      this.list = []
+    }
+    count() {
+      return this.list.length
+    }
+    add(obj) {
+      this.list.push(obj)
+    }
+    get(index) {
+      return this.list[index]
+    }
+  }
+
+  const addBtn = document.getElementById('addBtn')
+  let handle = document.getElementById('handle')
+  const checkboxWrapper = document.getElementById('checkboxWrapper')
+
+  addBtn.onclick = addNewObserver
+  handle.onclick = changeHandle
+
+  handle.subject = new Subject()
+
+  function addNewObserver() {
+    let check = document.createElement('input')
+    check.type = 'checkbox'
+    check.observer = new Observer((value) => {
+      check.checked = value
+    })
+    handle.subject.addObserver(check.observer)
+    checkboxWrapper.appendChild(check)
+  }
+  function changeHandle() {
+    handle.subject.notify(handle.checked);
+  }
+
+
 </script>
 
 </html>
