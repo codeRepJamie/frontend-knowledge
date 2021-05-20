@@ -1,5 +1,6 @@
 # 性能优化相关知识点
 
+* [优化措施](/performance/methods.md)
 * [性能测试工具](/performance/tool.md)
 * [js性能优化](/performance/js.md)
 * [图片性能优化](/performance/pic.md)
@@ -8,3 +9,4 @@
 * [预加载预渲染](/performance/pre.md)
 * [懒加载懒执行](/performance/lazy.md)
 * [cdn](/performance/cdn.md)
+* [webpack性能优化](/performance/webpack.md)
