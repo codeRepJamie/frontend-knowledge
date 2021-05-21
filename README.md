@@ -66,6 +66,7 @@ gitbook serve
   * [性能测试工具(2)](/performance/tool.md)
   * [webpack性能优化(1*)](/performance/webpack.md)
 * [前端工程化](engineering/index.md)
+  * [webpack(1)](/engineering/webpack.md)
 * [网络安全](safe/index.md)
   * [xss(1*)](/safe/xss.md)
   * [csp(2*)](/safe/csp.md)

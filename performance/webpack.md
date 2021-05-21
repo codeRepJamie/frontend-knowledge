@@ -32,7 +32,37 @@ module.exports = {
 };
 ```
 ### splitChunks配置
-webpack的splitChunks是根据一定条件自动拆分chunks，如果需要对chunks进行自定义拆分，例如把第三方的插件分配为一个大的chunk，其余公共文件分配为一个chunck，可以在这里配置
+webpack的splitChunks是根据一定规则自动拆分chunks，如果需要对chunks进行自定义拆分，例如把第三方的插件分配为一个大的chunk，其余公共文件分配为一个chunck，可以在这里配置
+```js
+// webpack.config.js
+{
+  optimization:{
+    splitChunks:{
+      // all 对同步、异步引入代码都进行拆分
+      // async 仅对异步代码都进行拆分
+      // inital 仅对同步代码都进行拆分
+      // 同步引入：import _ from 'loadsh'
+      // 异步引入：import('loadsh')
+      chunks:'all',
+      cacheGroup:{
+        // 拆分模块
+        anyNameIsOk:{
+          // 拆分模块名
+          name:'anyNameIsOk',
+          // 优先级，符合当前拆分模块规则优先级，数字越大越优先
+          priority:1,
+          // 路径规则，文件路径符合某个正则 如下：来自node_modules文件夹
+          test: /node_modules/,
+          // 最小模块代码大小准入，规定代码大小超过多少byte才拆分到当前chunk
+          minSize: 5 * 1024,
+          // 最小模块被引入数量准入，规定代码模块至少被引用多少次才会拆分到当前chunk
+          minchunk: 1,
+        }
+      }
+    }
+  }
+}
+```
 
 ## 打包速度提升
 ### 使用多线程提升打包速度
